@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* Base app tokens (neutral default before user picks a theme) */
+:root {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --border: #e7e7ef;
+  --text: #22242a;
+  --muted: #5a5f6b;
+
+  --soft1: #f1f2ff;
+  --soft2: #eef6ff;
+  --soft3: #effaf5;
+  --soft4: #fff2f0;
+
+  --shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  --shadowSoft: 0 10px 22px rgba(0, 0, 0, 0.06);
+
+  --accent: #6b7cff;
+}
+
+/* 🌸 Soft */
+:root[data-theme="soft"] {
+  --bg: #fff7fb;
+  --card: #ffffff;
+  --border: #f1d3e3;
+  --text: #2b2b2b;
+  --muted: #6b5b66;
+
+  --soft1: #ffe1ef;
+  --soft2: #eee9ff;
+  --soft3: #e8fbf6;
+  --soft4: #fff0e8;
+
+  --shadow: 0 14px 30px rgba(255, 125, 182, 0.12);
+  --shadowSoft: 0 10px 22px rgba(0, 0, 0, 0.06);
+
+  --accent: #ff7db6;
+}
+
+/* ❄️ Cool */
+:root[data-theme="cool"] {
+  --bg: #f4f8ff;
+  --card: #ffffff;
+  --border: #d6e4ff;
+  --text: #1f2937;
+  --muted: #475569;
+
+  --soft1: #e6eeff;
+  --soft2: #eaf6ff;
+  --soft3: #e9fff8;
+  --soft4: #f1f5ff;
+
+  --shadow: 0 14px 30px rgba(79, 124, 255, 0.12);
+  --shadowSoft: 0 10px 22px rgba(0, 0, 0, 0.06);
+
+  --accent: #4f7cff;
+}
+
+/* 🌙 Dark */
+:root[data-theme="dark"] {
+  --bg: #0b1220;
+  --card: #0f172a;
+  --border: #1e293b;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+
+  --soft1: #111c33;
+  --soft2: #14213d;
+  --soft3: #0f2430;
+  --soft4: #1a2a3a;
+
+  --shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+  --shadowSoft: 0 10px 22px rgba(0, 0, 0, 0.4);
+
+  --accent: #38bdf8;
+}
+
+/* 🌿 Mint */
+:root[data-theme="mint"] {
+  --bg: #f3fffb;
+  --card: #ffffff;
+  --border: #c8f3e4;
+  --text: #1f2937;
+  --muted: #3f5b53;
+
+  --soft1: #dffbf0;
+  --soft2: #e9fff8;
+  --soft3: #e6f7ff;
+  --soft4: #f6fff9;
+
+  --shadow: 0 14px 30px rgba(16, 185, 129, 0.14);
+  --shadowSoft: 0 10px 22px rgba(0, 0, 0, 0.06);
+
+  --accent: #10b981;
+}
+
+/* Make the whole site follow the theme */
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Soft */
+[data-theme="soft"] {
+  --accent: #ff7db6;
+  --accentSoft: #ffe1ef;
+  --accentSoft2: #eee9ff;
+  --accentStrong: #ff5fa8; /* 👈 darker bar */
+}
+
+/* Mint */
+[data-theme="mint"] {
+  --accent: #56d6c9;
+  --accentSoft: #e8fbf6;
+  --accentSoft2: #dff7f2;
+  --accentStrong: #34bfb1; /* 👈 darker mint */
+}
+
+/* Cool */
+[data-theme="cool"] {
+  --accent: #7aa2ff;
+  --accentSoft: #eef2ff;
+  --accentSoft2: #e6ebff;
+  --accentStrong: #5c86ff;
+}
+
+/* Dark */
+[data-theme="dark"] {
+  --accent: #c7b9ff;
+  --accentSoft: #2a2a33;
+  --accentSoft2: #1f1f28;
+  --accentStrong: #9f8cff;
+}
